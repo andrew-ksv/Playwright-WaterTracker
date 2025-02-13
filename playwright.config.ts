@@ -39,18 +39,24 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      name: 'frontend-chromium',
+      testDir: 'tests/frontend',
+      use: { browserName: 'chromium', headless: false },
     },
-
     {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+      name: 'frontend-firefox',
+      testDir: 'tests/frontend',
+      use: { browserName: 'firefox', headless: false },
     },
-
     {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
+      name: 'frontend-webkit',
+      testDir: 'tests/frontend',
+      use: { browserName: 'webkit', headless: false },
+    },
+    {
+      name: 'backend',
+      testDir: 'tests/backend',
+      use: { headless: true },
     },
 
     /* Test against mobile viewports. */
