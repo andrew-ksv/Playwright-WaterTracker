@@ -6,7 +6,6 @@ import { defineConfig, devices } from '@playwright/test';
  */
 import dotenv from 'dotenv';
 dotenv.config();
-export const FRONTEND_URL = process.env.FRONTEND_URL;
 export const BACKEND_URL = process.env.BACKEND_URL;
 export const VALID_EMAIL = process.env.VALID_EMAIL;
 export const VALID_PASSWORD = process.env.VALID_PASSWORD;
@@ -31,7 +30,7 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    // baseURL: 'http://127.0.0.1:3000',
+    baseURL: 'https://nadiiapavliuchenko.github.io/WaterTrackerFrontend',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
