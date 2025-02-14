@@ -1,6 +1,6 @@
 import { test } from "@playwright/test";
 import { ProfilePage } from '../pages/ProfilePage';
-import { auth } from "../utils/auth";
+import { authFrontend } from "../utils/auth";
 import { VALID_EMAIL, VALID_PASSWORD } from '../../playwright.config';
 
 test.describe("Profile Page tests", () => {
@@ -14,7 +14,7 @@ test.describe("Profile Page tests", () => {
       }
       await page.goto(`${baseURL}/signin`);
 
-      await auth(page, VALID_EMAIL, VALID_PASSWORD);
+      await authFrontend(page, VALID_EMAIL, VALID_PASSWORD);
       await page.waitForURL(`${baseURL}/home`); // Перевіряємо, що авторизація пройшла успішно
       await page.waitForSelector("text=Login successful. Welcome!");
       await profilePage.okButton();
