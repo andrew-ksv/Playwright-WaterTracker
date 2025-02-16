@@ -22,21 +22,21 @@ jobs:
           BACKEND_URL: ${{ secrets.BACKEND_URL }}
           VALID_EMAIL: ${{ secrets.VALID_EMAIL }}
           VALID_PASSWORD: ${{ secrets.VALID_PASSWORD }}
-        run: npx playwright test --project=frontend-chromium
+        run: xvfb-run --auto-servernum npx playwright test --project=frontend-chromium
 
       - name: Run Playwright tests (Firefox)
         env:
           BACKEND_URL: ${{ secrets.BACKEND_URL }}
           VALID_EMAIL: ${{ secrets.VALID_EMAIL }}
           VALID_PASSWORD: ${{ secrets.VALID_PASSWORD }}
-        run: npx playwright test --project=frontend-firefox
+        run: xvfb-run --auto-servernum npx playwright test --project=frontend-firefox
 
       - name: Run Playwright tests (WebKit)
         env:
           BACKEND_URL: ${{ secrets.BACKEND_URL }}
           VALID_EMAIL: ${{ secrets.VALID_EMAIL }}
           VALID_PASSWORD: ${{ secrets.VALID_PASSWORD }}
-        run: npx playwright test --project=frontend-webkit
+        run: xvfb-run --auto-servernum npx playwright test --project=frontend-webkit
 
       - name: Run Playwright tests (Backend)
         env:
