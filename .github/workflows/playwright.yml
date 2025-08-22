@@ -45,7 +45,7 @@ jobs:
           VALID_PASSWORD: ${{ secrets.VALID_PASSWORD }}
         run: npx playwright test --project=backend
 
-    - name: Upload Playwright report artifact
+      - name: Upload Playwright report artifact
         uses: actions/upload-artifact@v4
         with:
           name: playwright-report
