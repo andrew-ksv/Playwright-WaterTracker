@@ -13,10 +13,15 @@ This repository contains automated tests for the Water Tracker web app, using Pl
 - Run a specific test: npx playwright test tests/frontend/test-name.spec.ts
 - Run in UI mode: npx playwright test --ui
 - Run frontend tests in browsers:
+
     -npx playwright test --project=frontend-chromium
+
     -npx playwright test --project=frontend-firefox
+
     -npx playwright test --project=frontend-webkit
+
 - Run backend tests:
+
     -npx playwright test --project=backend
 
 ## Project Structure
